@@ -2,10 +2,7 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "commonjs",
-    "lib": [
-      "es2018",
-      "esnext.asynciterable"
-    ],
+    "lib": ["es2018", "esnext.asynciterable"],
     "strict": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -28,9 +25,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "declaration": true
   },
-  "include": [
-    "lib/**/*.ts",
-    "external-types/**/*.d.ts"
-  ]
+  "include": ["lib/**/*.ts", "external-types/**/*.d.ts"]
 }
