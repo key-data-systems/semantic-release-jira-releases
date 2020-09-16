@@ -9,7 +9,7 @@
 
 | Step               | Description                                                                                                                                   |
 |--------------------|----------------------------------------------------------------------------|
-| `verifyConditions` | Validate the config options and check for a `JIRA_AUTH` in the environment |
+| `verifyConditions` | Validate the config options and checks for `JIRA_EMAIL` and `JIRA_TOKEN` in the environment |
 | `sucess`           | Find all tickets from commits and add them to a new release on JIRA        |
 
 ## Install
