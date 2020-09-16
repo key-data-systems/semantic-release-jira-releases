@@ -46,8 +46,11 @@ export async function verifyConditions(config: PluginConfig, context: PluginCont
     throw new SemanticReleaseError(`config.networkConcurrency must be an number greater than 0`);
   }
 
-  if (!context.env.JIRA_AUTH) {
-    throw new SemanticReleaseError(`JIRA_AUTH must be a string`);
+  if (!context.env.JIRA_EMAIL) {
+    throw new SemanticReleaseError(`JIRA_EMAIL must be a string`);
+  }
+  if (!context.env.JIRA_TOKEN) {
+    throw new SemanticReleaseError(`JIRA_TOKEN must be a string`);
   }
   const jira = makeClient(config, context);
   await jira.project.getProject({ projectIdOrKey: config.projectId });

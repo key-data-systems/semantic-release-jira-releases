@@ -6,7 +6,8 @@ export function makeClient(config: PluginConfig, context: PluginContext): JiraCl
   return new JiraClient({
     host: config.jiraHost,
     basic_auth: {
-      base64: context.env.JIRA_AUTH,
+      email: context.env.JIRA_EMAIL,
+      api_token: context.env.JIRA_TOKEN,
     },
   });
 }

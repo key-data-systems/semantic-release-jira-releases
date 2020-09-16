@@ -6,11 +6,12 @@ import { context, pluginConfig } from './fakedata';
 
 const itif = condition => condition ? it : it.skip;
 
-const runIntegration = () => { return process.env.JIRA_AUTH && process.env.JIRA_HOST && process.env.JIRA_PROJECT_ID; };
+const runIntegration = () => { return process.env.JIRA_EMAIL && process.env.JIRA_TOKEN && process.env.JIRA_HOST && process.env.JIRA_PROJECT_ID; };
 
 describe('integration tests', () => {
   beforeAll(() => {
-    context.env.JIRA_AUTH = process.env.JIRA_AUTH as string;
+    context.env.JIRA_EMAIL = process.env.JIRA_EMAIL as string;
+    context.env.JIRA_TOKEN = process.env.JIRA_TOKEN as string;
     pluginConfig.projectId = Number(process.env.JIRA_PROJECT_ID);
     pluginConfig.jiraHost = process.env.JIRA_HOST;
     pluginConfig.dryRun = false;
